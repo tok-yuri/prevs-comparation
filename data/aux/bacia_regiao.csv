@@ -1,0 +1,226 @@
+POSTO,BACIA,REGIAO
+1,Grande,Sudeste
+2,Grande,Sudeste
+6,Grande,Sudeste
+7,Grande,Sudeste
+8,Grande,Sudeste
+9,Grande,Sudeste
+10,Grande,Sudeste
+11,Grande,Sudeste
+12,Grande,Sudeste
+14,Grande,Sudeste
+15,Grande,Sudeste
+16,Grande,Sudeste
+17,Grande,Sudeste
+18,Grande,Sudeste
+20,Paranaíba,Sudeste
+22,Paranaíba,Sudeste
+23,Paranaíba,Sudeste
+24,Paranaíba,Sudeste
+25,Paranaíba,Sudeste
+28,Paranaíba,Sudeste
+31,Paranaíba,Sudeste
+32,Paranaíba,Sudeste
+33,Paranaíba,Sudeste
+34,Alto Paraná,Sudeste
+37,Tietê,Sudeste
+38,Tietê,Sudeste
+39,Tietê,Sudeste
+40,Tietê,Sudeste
+42,Tietê,Sudeste
+43,Tietê,Sudeste
+44,Alto Paraná,Sudeste
+45,Alto Paraná,Sudeste
+46,Baixo Paraná,Sudeste
+47,Paranapanema (SE),Sudeste
+48,Paranapanema (SE),Sudeste
+49,Paranapanema (SE),Sudeste
+50,Paranapanema (SE),Sudeste
+51,Paranapanema (SE),Sudeste
+52,Paranapanema (SE),Sudeste
+53,Paranapanema (SE),Sudeste
+54,Paranapanema (S),Sul
+55,Paranapanema (S),Sul
+57,Paranapanema (S),Sul
+58,Paranapanema (S),Sul
+61,Paranapanema (SE),Sudeste
+62,Paranapanema (SE),Sudeste
+63,Paranapanema (SE),Sudeste
+65,Iguaçu,Sul
+66,Baixo Paraná,Sudeste
+70,Iguaçu,Sul
+71,Iguaçu,Sul
+72,Iguaçu,Sul
+73,Iguaçu,Sul
+74,Iguaçu,Sul
+75,Iguaçu,Sul
+76,Iguaçu,Sul
+77,Iguaçu,Sul
+78,Iguaçu,Sul
+80,Iguaçu,Sul
+81,Iguaçu,Sul
+83,Iguaçu,Sul
+85,Uruguai,Sul
+88,Uruguai,Sul
+89,Uruguai,Sul
+92,Uruguai,Sul
+93,Uruguai,Sul
+94,Uruguai,Sul
+97,Jacuí,Sul
+98,Jacuí,Sul
+99,Paranaíba,Sudeste
+100,Uruguai,Sul
+101,Itajaí-Açu,Sul
+102,Uruguai,Sul
+103,Uruguai,Sul
+104,Alto Tietê,Sudeste
+109,Alto Tietê,Sudeste
+110,Jacuí,Sul
+111,Jacuí,Sul
+112,Jacuí,Sul
+113,Jacuí,Sul
+114,Jacuí,Sul
+115,Capivari,Sul
+116,Alto Tietê,Sudeste
+117,Alto Tietê,Sudeste
+118,Alto Tietê,Sudeste
+119,Alto Tietê,Sudeste
+120,Paraíba do Sul,Sudeste
+121,Paraíba do Sul,Sudeste
+122,Paraíba do Sul,Sudeste
+123,Paraíba do Sul,Sudeste
+125,Paraíba do Sul,Sudeste
+126,Paraíba do Sul,Sudeste
+127,Paraíba do Sul,Sudeste
+129,Paraíba do Sul,Sudeste
+130,Paraíba do Sul,Sudeste
+131,Paraíba do Sul,Sudeste
+132,Paraíba do Sul,Sudeste
+134,Doce,Sudeste
+135,Paraíba do Sul,Sudeste
+141,Doce,Sudeste
+144,Doce,Sudeste
+145,Amazonas (SE),Sudeste
+148,Doce,Sudeste
+149,Doce,Sudeste
+154,Baixo Paraná,Sudeste
+155,São Francisco (SE),Sudeste
+156,São Francisco (SE),Sudeste
+158,São Francisco (SE),Sudeste
+160,Alto Tietê,Sudeste
+161,Alto Tietê,Sudeste
+164,Alto Tietê,Sudeste
+166,Baixo Paraná,Sudeste
+168,São Francisco (NE),Nordeste
+169,São Francisco (NE),Nordeste
+171,São Francisco (NE),Nordeste
+172,São Francisco (NE),Nordeste
+173,São Francisco (NE),Nordeste
+175,São Francisco (NE),Nordeste
+176,São Francisco (NE),Nordeste
+178,São Francisco (NE),Nordeste
+183,Doce,Sudeste
+184,Doce,Sudeste
+187,Tocantins (N),Norte
+188,Jequitinhonha (NE),Nordeste
+190,Parnaíba,Nordeste
+191,Tocantins (SE),Sudeste
+196,Itabapoana,Sudeste
+197,Paraíba do Sul,Sudeste
+198,Paraíba do Sul,Sudeste
+199,Paraíba do Sul,Sudeste
+201,Paraíba do Sul,Sudeste
+202,Paraíba do Sul,Sudeste
+203,Doce,Sudeste
+204,Araguari,Norte
+205,Paranaíba,Sudeste
+206,Paranaíba,Sudeste
+207,Paranaíba,Sudeste
+209,Paranaíba,Sudeste
+211,Grande,Sudeste
+213,Santa Maria da Vitória,Sudeste
+215,Uruguai,Sul
+216,Uruguai,Sul
+217,Uruguai,Sul
+220,Uruguai,Sul
+221,Jacuí,Sul
+222,Iguaçu,Sul
+224,Jacuí,Sul
+225,Amazonas (SE),Sudeste
+226,Amazonas (SE),Sudeste
+227,Amazonas (SE),Sudeste
+228,Amazonas (SE),Sudeste
+229,Amazonas (SE),Sudeste
+230,Amazonas (SE),Sudeste
+237,Tietê,Sudeste
+238,Tietê,Sudeste
+239,Tietê,Sudeste
+240,Tietê,Sudeste
+241,Paranaíba,Sudeste
+242,Tietê,Sudeste
+243,Tietê,Sudeste
+244,Alto Paraná,Sudeste
+245,Alto Paraná,Sudeste
+246,Baixo Paraná,Sudeste
+247,Paranaíba,Sudeste
+248,Paranaíba,Sudeste
+249,Paranapanema (SE),Sudeste
+251,Paranaíba,Sudeste
+252,Paraguai,Sudeste
+253,Tocantins (SE),Sudeste
+254,Paraguaçu,Nordeste
+255,Jequitinhonha (SE),Sudeste
+257,Tocantins (SE),Sudeste
+258,Jequitinhonha (NE),Sudeste
+259,Paraguai,Sudeste
+260,Paranaíba,Sudeste
+261,Paranaíba,Sudeste
+262,Doce,Sudeste
+263,Doce,Sudeste
+265,Doce,Sudeste
+266,Baixo Paraná,Sudeste
+267,Doce,Sudeste
+269,Amazonas (N),Norte
+270,Tocantins (SE),Sudeste
+271,Tocantins (N),Norte
+273,Tocantins (SE),Sudeste
+274,Tocantins (N),Norte
+275,Tocantins (N),Norte
+276,Tocantins (N),Norte
+277,Amazonas (N),Norte
+278,Paraguai,Sudeste
+279,Amazonas (SE),Sudeste
+280,Araguari,Norte
+281,Paraguai,Sudeste
+282,Alto Paraná,Sudeste
+283,Mucuri,Sudeste
+284,Jacuí,Sul
+285,Amazonas (SE),Sudeste
+286,Uruguai,Sul
+287,Amazonas (SE),Sudeste
+288,Xingu,Norte
+289,Paranaíba,Sudeste
+290,Amazonas (N),Norte
+291,Amazonas (SE),Sudeste
+292,Xingu,Norte
+293,Tietê,Sudeste
+294,Paranaíba,Sudeste
+295,Paraguai,Sudeste
+296,Amazonas (SE),Sudeste
+297,Araguari,Norte
+298,Paraíba do Sul,Sudeste
+299,Paraíba do Sul,Sudeste
+300,Tietê,Sudeste
+301,Alto Tietê,Sudeste
+302,Xingu,Norte
+303,Paraíba do Sul,Sudeste
+304,Doce,Sudeste
+306,Paraíba do Sul,Sudeste
+313,Paranaíba,Sudeste
+314,Paraíba do Sul,Sudeste
+315,Doce,Sudeste
+316,Doce,Sudeste
+317,Paraíba do Sul,Sudeste
+318,Alto Tietê,Sudeste
+319,Alto Tietê,Sudeste
+320,Alto Tietê,Sudeste
