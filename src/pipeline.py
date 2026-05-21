@@ -23,7 +23,7 @@ def baixar_zip_ons_preliminar(root: Path, darq: str) -> Path:
     nome_arquivo = f"resultados_preliminares_consistidos_vazoes_semanais_pmo_{darq}.zip"
     url = f"{base_url}{nome_arquivo}"
 
-    destino_dir = root / "vem-ONS"
+    destino_dir = root / "downloads/ONS"
     destino_dir.mkdir(parents=True, exist_ok=True)
     destino_arquivo = destino_dir / nome_arquivo
 
@@ -88,7 +88,7 @@ def baixar_tar_tok_gsutil(paths: PipelinePaths, ano: int, mes: int, darq: str, M
         f"{periodo}/{nome_tar}"
     )
 
-    destino_dir = paths.root / "vem-TOK"
+    destino_dir = paths.root / "downloads/TOK"
     destino_dir.mkdir(parents=True, exist_ok=True)
     destino_tar = destino_dir / nome_tar
 

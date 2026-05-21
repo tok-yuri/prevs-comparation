@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+setuptools
+wheel
+keyring
+keyrings.google-artifactregistry-auth
+--extra-index-url=https://southamerica-east1-python.pkg.dev/tokwsv3/python-packages/simple/
+tok-gcp-tools==0.0.14.dev1

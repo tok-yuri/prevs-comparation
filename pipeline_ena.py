@@ -12,7 +12,7 @@ from pathlib import Path
 from src.pipeline import run_pipeline
 
 
-def main(ano: int = 2026, mes: int = 5, revisao: int = 0, MODELO_base: str = "ETA40-GEFSav", root: Path = Path(".")) -> None:
+def main(ano: int = 2026, mes: int = 5, revisao: int = 3, MODELO_base: str = "ETA40-GEFSav", root: Path = Path(".")) -> None:
     """Lê os argumentos CLI e dispara o pipeline completo."""
     parser = argparse.ArgumentParser(
         description=(
@@ -22,8 +22,8 @@ def main(ano: int = 2026, mes: int = 5, revisao: int = 0, MODELO_base: str = "ET
     )
     parser.add_argument("ano", default=ano, nargs="?", const=ano, type=int, help="Ano de processamento (ex.: 2026)")
     parser.add_argument("mes", default=mes, nargs="?", const=mes, type=int, help="Mês de processamento (1-12, ex.: 5)")
-    parser.add_argument("revisao", default=revisao, nargs="?", const=revisao, type=int, help="Revisão PMO (ex.: 0)")
-    parser.add_argument("MODELO_base", type=str, help="Nome base do modelo para busca do TOK (ex: ETA40-GEFSav)")
+    parser.add_argument("revisao", default=revisao, nargs="?", const=revisao, type=int, help="Revisão PMO (ex.: 3)")
+    parser.add_argument("MODELO_base", default=MODELO_base, nargs="?", const=MODELO_base, type=str, help="Nome base do modelo para busca do TOK (ex: ETA40-GEFSav)")
     parser.add_argument("--root",
         default=root,
         help="Diretório raiz do projeto (default: diretório atual)",
@@ -38,4 +38,4 @@ def main(ano: int = 2026, mes: int = 5, revisao: int = 0, MODELO_base: str = "ET
     print(args.ano, args.mes, args.revisao, args.MODELO_base, sep=", ")    
 
 if __name__ == "__main__":
-    main()
+    main(revisao=3, MODELO_base="ECENSav-ETA40-GEFSav")
