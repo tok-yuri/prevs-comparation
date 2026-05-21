@@ -24,7 +24,7 @@ def gerar_comparacoes(output_dir: Path, ons_limpo: Path, tok_limpo: Path) -> Non
 
     df_dif_abs = tok_ena.merge(ons_ena, on="Posto", how="inner")
     for i in range(1, 7):
-        df_dif_abs[f"ENA{i}_DIF"] = df_dif_abs[f"ENA{i}_TOK"] - df_dif_abs[f"ENA{i}_ONS"]
+        df_dif_abs.loc[:, f"ENA{i}_DIF"] = df_dif_abs[f"ENA{i}_TOK"] - df_dif_abs[f"ENA{i}_ONS"]
 
     cols_finais = [
         "Posto",
@@ -75,7 +75,7 @@ def gerar_comparacoes(output_dir: Path, ons_limpo: Path, tok_limpo: Path) -> Non
 
     dif_perc_bacia = dif_abs_bacia.merge(df_ons_bacia[["BACIA"] + cols_ena], on="BACIA", how="inner")
     for i in range(1, 7):
-        dif_perc_bacia[f"PERC{i}"] = np.where(
+        dif_perc_bacia.loc[:, f"PERC{i}"] = np.where(
             dif_perc_bacia[f"ENA{i}"] != 0,
             (dif_perc_bacia[f"DIF{i}"] / dif_perc_bacia[f"ENA{i}"]) * 100,
             np.nan,
@@ -97,7 +97,7 @@ def gerar_comparacoes(output_dir: Path, ons_limpo: Path, tok_limpo: Path) -> Non
 
     dif_perc_regiao = dif_abs_regiao.merge(df_ons_regiao, on="REGIAO", how="inner")
     for i in range(1, 7):
-        dif_perc_regiao[f"PERC{i}"] = np.where(
+        dif_perc_regiao.loc[:, f"PERC{i}"] = np.where(
             dif_perc_regiao[f"ENA{i}"] != 0,
             (dif_perc_regiao[f"DIF{i}"] / dif_perc_regiao[f"ENA{i}"]) * 100,
             np.nan,

@@ -59,7 +59,7 @@ def _gerar_figura_tabela(
     df_s = df_fig_sistema.rename(columns=rename_s)[["REGIAO"] + cols_s].rename(columns={"REGIAO": "Bacia"})
 
     # Padroniza nomes dos sistemas em caixa alta para casar com ORDEM_SISTEMA.
-    df_s["Bacia"] = df_s["Bacia"].astype(str).str.upper()
+    df_s.loc[:, "Bacia"] = df_s.loc[:, "Bacia"].astype(str).str.upper()
     df_b, df_s = ordenar_bacias_sistemas(df_b, df_s)
 
     colunas = ["Bacia"] + cols_s

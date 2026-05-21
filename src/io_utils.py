@@ -22,7 +22,7 @@ def to_posto_wide(df: pd.DataFrame, posto_col: str) -> pd.DataFrame:
     df.index = df.index.astype(str)
 
     df_t = df.T
-    df_t.columns = df_t.columns.astype(str).str.zfill(3)
+    df_t.columns = pd.Index(df_t.columns.astype(str).str.zfill(3), dtype=object)
     return df_t
 
 

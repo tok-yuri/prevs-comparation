@@ -1,6 +1,6 @@
-./downloads/
-./data/output/
-./data/input/
+downloads/
+data/output/*
+data/input/
 .env/
 .vscode/__pycache__/
 *.pyc

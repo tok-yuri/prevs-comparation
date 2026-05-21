@@ -14,32 +14,32 @@ def add_vazoes_artificiais(naturais: pd.DataFrame) -> pd.DataFrame:
     art = pd.DataFrame(index=naturais.index)
 
     # TIETÊ
-    dif = 0.1 * (naturais["161"] - naturais["117"] - naturais["118"]) + naturais["117"] + naturais["118"]
+    dif = 0.1 * (naturais["161"].copy() - naturais["117"].copy() - naturais["118"].copy()) + naturais["117"].copy() + naturais["118"].copy()
     art["319"] = dif
-    art["037"] = naturais["237"] - dif
-    art["038"] = naturais["238"] - dif
-    art["039"] = naturais["239"] - dif
-    art["040"] = naturais["240"] - dif
-    art["042"] = naturais["242"] - dif
-    art["043"] = naturais["243"] - dif
+    art["037"] = naturais["237"].copy() - dif
+    art["038"] = naturais["238"].copy() - dif
+    art["039"] = naturais["239"].copy() - dif
+    art["040"] = naturais["240"].copy() - dif
+    art["042"] = naturais["242"].copy() - dif
+    art["043"] = naturais["243"].copy() - dif
 
     # PARANÁ
-    art["044"] = naturais["244"] - dif
-    art["045"] = naturais["245"] - dif
-    art["046"] = naturais["246"] - dif
-    art["066"] = naturais["266"] - dif
+    art["044"] = naturais["244"].copy() - dif
+    art["045"] = naturais["245"].copy() - dif
+    art["046"] = naturais["246"].copy() - dif
+    art["066"] = naturais["266"].copy() - dif
 
     # HENRY BORDEN
-    art["318"] = naturais["116"] + dif
+    art["318"] = naturais["116"].copy() + dif
 
     # IGUAÇU
-    art["075"] = naturais["076"] + naturais["073"].apply(lambda x: min(x - 10, 173.5))
+    art["075"] = naturais["076"].copy() + naturais["073"].apply(lambda x: min(x - 10, 173.5))
 
     # JACUÍ
-    art["221"] = naturais["224"]
+    art["221"] = naturais["224"].copy()
 
     # PARAGUAI
-    art["252"] = naturais["259"]
+    art["252"] = naturais["259"].copy()
 
     # PARAÍBA DO SUL
     vaz_125 = naturais["125"].astype(float).to_numpy(copy=True)
@@ -57,24 +57,26 @@ def add_vazoes_artificiais(naturais: pd.DataFrame) -> pd.DataFrame:
     art["298"] = vaz_298
     art["132"] = naturais["202"].values + np.minimum(naturais["201"].values, np.full(len(naturais), 25))
     art["317"] = np.maximum(naturais["201"].values - 25, np.zeros(len(naturais)))
-    art["315"] = (naturais["203"] - naturais["201"]).values + art["317"] + art["298"]
+    art.loc[:, "315"] = (naturais["203"].copy() - naturais["201"].copy()).values + art["317"] + art["298"]
     art["316"] = np.minimum(art["315"].values, np.full(len(naturais), 190))
-    art["304"] = art["315"] - art["316"]
-    art["127"] = naturais["129"] - art["298"] - naturais["203"] + art["304"]
+    art.loc[:, "304"] = art["315"] - art["316"]
+    art.loc[:, "127"] = naturais["129"].copy() - art["298"] - naturais["203"].copy() + art["304"]
     art["126"] = np.where(art["127"].values <= 430, np.maximum(0, art["127"].values - 90), 340)
-    art["299"] = naturais["130"] - art["298"] - naturais["203"] + art["304"]
+    art.loc[:, "299"] = naturais["130"].copy() - art["298"] - naturais["203"].copy() + art["304"].copy() - art["126"].copy()
     art["131"] = np.minimum(art["316"].values, np.full(len(naturais), 144))
     art["303"] = np.where(art["132"].values < 17, art["132"].values, 17) + np.minimum(
         art["316"].values - art["131"].values,
         np.full(len(naturais), 34),
     )
-    art["306"] = art["303"] + art["131"]
+    art.loc[:, "306"] = art["303"] + art["131"]
 
     # OUTRAS SUDESTE
-    art["166"] = naturais["266"] - naturais["244"] - naturais["061"]
-    art["366"] = naturais["266"]
+    art.loc[:, "166"] = naturais["266"].copy() - naturais["244"].copy() - naturais["061"].copy()
+    art["366"] = naturais["266"].copy()
 
-    return pd.concat([naturais, art], axis="columns")
+    result = pd.concat([naturais, art], axis="columns")
+    result.columns = result.columns.astype(object)
+    return result
 
 
 def calcular_data(ano_inicio: int, mes_inicio: int) -> date:
@@ -105,7 +107,7 @@ def calcular_e_inserir_vazao_belo_monte(
     posto_288 = np.array([art_df.loc[s, "288"] for s in semana_ref], dtype=float)
 
     hidro = hidrograma.copy()
-    hidro["MDA"] = pd.to_datetime(hidro["MDA"])
+    hidro.loc[:, "MDA"] = pd.to_datetime(hidro["MDA"])
     hidro = hidro.set_index("MDA").sort_index()
 
     hidro_b = hidro.reindex(datas)["HidroB"]
@@ -172,7 +174,7 @@ def processar_ena_fonte(
     prod_df = pd.read_csv(prod_file, encoding=input_encoding)
     prod_t = to_posto_wide(prod_df, "POSTO")
     produtibilidade = pd.to_numeric(prod_t.loc["PRODUTIBILIDADE"], errors="coerce")
-    produtibilidade.index = produtibilidade.index.astype(str).str.zfill(3)
+    produtibilidade.index = pd.Index(produtibilidade.index.astype(str).str.zfill(3), dtype=object)
     produtibilidade = produtibilidade.groupby(level=0).first()
 
     fatores = produtibilidade.reindex(art_df.columns)
@@ -218,11 +220,11 @@ def processar_ena_fonte(
 
     # 8) Agregação de ENA por bacia.
     mapa_bacia = bacia_regiao_t.loc["BACIA"].copy()
-    mapa_bacia.index = mapa_bacia.index.astype(str).str.zfill(3)
+    mapa_bacia.index = pd.Index(mapa_bacia.index.astype(str).str.zfill(3), dtype=object)
     mapa_bacia = mapa_bacia[~mapa_bacia.index.duplicated(keep="first")]
 
     ena_df = art_df_prod.copy()
-    ena_df.columns = ena_df.columns.astype(str).str.zfill(3)
+    ena_df.columns = pd.Index(ena_df.columns.astype(str).str.zfill(3), dtype=object)
     ena_df = ena_df.loc[:, ~ena_df.columns.duplicated(keep="last")]
     ena_df = ena_df.apply(pd.to_numeric, errors="coerce")
 
@@ -240,7 +242,7 @@ def processar_ena_fonte(
     # 9) Agregação de ENA por subsistema (região).
     linha_regiao = "REGIÃO" if "REGIÃO" in bacia_regiao_t.index else "REGIAO"
     mapa_regiao = bacia_regiao_t.loc[linha_regiao].copy()
-    mapa_regiao.index = mapa_regiao.index.astype(str).str.zfill(3)
+    mapa_regiao.index = pd.Index(mapa_regiao.index.astype(str).str.zfill(3), dtype=object)
     mapa_regiao = mapa_regiao[~mapa_regiao.index.duplicated(keep="first")]
 
     postos_comuns_regiao = ena_df.columns.intersection(mapa_regiao.index)
