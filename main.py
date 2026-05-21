@@ -38,4 +38,4 @@ def main(ano: int = 2026, mes: int = 5, revisao: int = 3, MODELO_base: str = "ET
     print(args.ano, args.mes, args.revisao, args.MODELO_base, sep=", ")    
 
 if __name__ == "__main__":
-    main(revisao=3, MODELO_base="ECENSav-ETA40-GEFSav")
+    main(revisao=4, MODELO_base="ETA40-GEFSav")
